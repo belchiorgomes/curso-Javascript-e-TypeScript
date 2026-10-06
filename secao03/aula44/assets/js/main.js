@@ -15,15 +15,22 @@ function calculoImc(){
 
         if(!peso || !altura){
             resultado.innerHTML = "Digite um peso e uma altura valida!";
+            resultado.style.color = 'red';
             return;
         }
 
         if(imc < 18.5){
             resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)}. Você está abaixo do peso`;
-        }else if(imc > 18.5 || imc < 24.5){
+        }else if(imc > 18.5 && imc < 24.5){
             resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)}. Você está com peso normal`;
-        }else{
-
+        }else if(imc > 25 && imc <29.9){
+            resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)}. Você está com Sobrepeso`;
+        }else if(imc > 30 && imc < 34.9){
+            resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)}. Você está com Obesidade grau 1`;
+        }else if(imc > 35 && imc < 39.9){
+            resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)}. Você está com Obesidade grau 2`;
+        }else if(imc > 40){
+            resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)}. Você está com Obesidade grau 3`;
         }
 
         // resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)}`;
